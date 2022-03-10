@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+</head>
+<body>
+    <h3>Trabajando con Arrays</h3>
+    
+    <div id="app"></div>
+    
+    <script>
+ //Creamos el array con el que vamos a Trabajar la inserción en HTML en forma lista de productos        
+        const products = [
+            {title:'Burger', price:90},
+            {title:'Pizza', price:100},
+            {title:'Wings', price:110}
+        ];
+//Creamos la variable con la cual vamos a trabajar el array products, y la insercion al HTML
+        // const app = document.getElementById('app');
+        // products.forEach(product => {
+        //     app.innerHTML+=`<li>${product.title} - $ ${product.price}</li>`
+        // })
+// CHECANDO EL EJEMPLO ANTERIOR usamos ahora EL METODO .map PARA HACER LA TRANSFORMACION DEL ARRAY
+// DE PRODUCTOS(array de objetos con propiedades) PARA PASARLO A STRINGS EN LA RENDERIZACION DEL NAVEGADOR
+    
+const lis=products.map(product=> { //Al usar .map en products se estaría creando un nuevo array
+//en forma de lista así que por eso se crea las const list
+        return `<li>${product.title} - $${product.price}.00</li>`
+    })
+    app.innerHTML=lis.join('');
+    //El metodo join sirve para tomar un array y converir sus elementos en un solo string
+    
+
+</script>
+</body>
+</html>

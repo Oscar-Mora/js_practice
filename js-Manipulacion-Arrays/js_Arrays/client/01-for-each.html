@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h3>Trabajando con Arrays</h3>
+    
+    <div id="app1"></div>
+    <h4>Crear una lista de tareas con checkbox para validar su estado</h4>
+    <div id="app"></div>
+    <h4>Ejemplo Zoo, entendiendo mutabilidad e INMUTABILIDAD</h4>
+    <div id="zoo"></div>
+    <script>
+ //Creamos el array con el que vamos a Trabajar la inserción en HTML en forma lista de productos        
+        const products = [
+            {title:'Burger', price:90},
+            {title:'Pizza', price:100},
+            {title:'Wings', price:110}
+        ];
+//Creamos la variable con la cual vamos a trabajar el array products, y la insercion al HTML
+        const app1 = document.getElementById('app1');
+        products.forEach(product => {
+            app1.innerHTML+=`<li>${product.title} - ${product.price}</li>`
+        })
+//Creamos el array con el que vamos a Trabajar la inserción en HTML en forma Tareas con checkbox        
+        const tasks = [
+            {title:'Tender la cama'},
+            {title:'Cepillarse los dientes'},
+            {title:'desayunar'}
+        ];
+//Creamos la variable con la cual vamos a trabajar el array TASKS, y la insercion al HTML
+        const app = document.getElementById('app');
+        tasks.forEach(task =>{
+            app.innerHTML += `<ul>${task.title}</ul> <input type="checkbox">` 
+        })
+//ENTENDIENDO LA INMUTABILIDAD Y MUTABILIDAD
+//Simplemente creamos variables para mejor entendimiento
+    const zoo = ["monkey","zebra","lion","elephanth"];
+    const zoo2 = zoo.push("tiger");
+    const appZoo = document.getElementById("zoo");
+    zoo.forEach(animal=>{
+        appZoo.innerHTML += `<ul>${animal}</ul>`
+    })
+    </script>
+</body>
+</html>
